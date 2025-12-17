@@ -27,10 +27,9 @@
 ### 一键执行流程
 
 ```bash
-# 1. 克隆本仓库
-cd /mnt/t2-6tb/Linpeikai/linux
-git clone <YOUR_REPO_URL> github_antigravity
-cd github_antigravity
+# 1. 克隆本仓库到你的工作目录
+git clone <YOUR_REPO_URL>
+cd <REPO_NAME>
 
 # 2. 检查当前环境（磁盘、端口、代理环境变量）
 bash scripts/00_check_env.sh
@@ -125,30 +124,26 @@ bash scripts/60_restart_vscode_remote.sh
 
 ---
 
-## 📦 推送到 GitHub
+## 📦 如何使用本仓库
+
+### 方式一：直接克隆使用
 
 ```bash
-cd /mnt/t2-6tb/Linpeikai/linux/github_antigravity
+# 克隆到本地
+git clone https://github.com/AsakaTigar/remote-antigravity-config.git
+cd remote-antigravity-config
 
-# 初始化仓库（如果还没有）
-git init
-git checkout -b main
-
-# 添加所有文件
-git add .
-
-# 检查是否有敏感信息
-git grep -nE 'subscribe\?token=|password|secret|127\.0\.0\.1:1080' || echo "No sensitive info found"
-
-# 提交
-git commit -m "Initial commit: mihomo TUN setup + VS Code Remote proxy cleanup"
-
-# 添加远程仓库（替换为你的 GitHub 仓库地址）
-git remote add origin git@github.com:<YOUR_GITHUB>/<REPO>.git
-
-# 推送
-git push -u origin main
+# 按照脚本顺序执行
+bash scripts/00_check_env.sh
+# ... 其他脚本
 ```
+
+### 方式二：Fork 后自定义
+
+1. 在 GitHub 上 Fork 本仓库
+2. 克隆你的 Fork
+3. 根据需要修改脚本和文档
+4. 提交并推送到你的仓库
 
 ---
 

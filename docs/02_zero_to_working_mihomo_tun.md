@@ -70,7 +70,8 @@ df -h /
 ### 克隆安装脚本
 
 ```bash
-mkdir -p /mnt/t2-6tb/_src && cd /mnt/t2-6tb/_src
+# 使用默认工作目录 (可通过 WORKDIR 环境变量自定义)
+mkdir -p ~/src && cd ~/src
 git clone --depth 1 https://github.com/nelvko/clash-for-linux-install.git
 cd clash-for-linux-install
 ```
@@ -247,7 +248,7 @@ curl -I https://www.google.com
 
 说明 mihomo 未正确安装，重新执行：
 ```bash
-cd /mnt/t2-6tb/_src/clash-for-linux-install
+cd ~/src/clash-for-linux-install
 sudo bash install.sh
 ```
 

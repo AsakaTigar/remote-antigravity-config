@@ -5,7 +5,7 @@ echo "========================================="
 echo "Install mihomo (clash-for-linux-install)"
 echo "========================================="
 
-WORKDIR="${WORKDIR:-/mnt/t2-6tb/_src}"
+WORKDIR="${WORKDIR:-$HOME/src}"
 mkdir -p "$WORKDIR"
 cd "$WORKDIR"
 
