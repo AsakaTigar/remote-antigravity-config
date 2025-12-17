@@ -1,0 +1,7 @@
+PASTE_YOUR_SUBSCRIPTION_URL_HERE
+
+# Example:
+# https://example.com/subscribe?token=YOUR_TOKEN_HERE
+#
+# ⚠️  DO NOT commit the real subscription URL to git!
+# This file is for reference only.

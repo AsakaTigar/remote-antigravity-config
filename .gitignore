@@ -1,0 +1,30 @@
+# secrets
+secrets/
+.env
+*.secret
+*.token
+*.url
+templates/subscription_url.txt
+
+# local caches / logs
+*.log
+logs/
+tmp/
+.cache/
+__pycache__/
+
+# VS Code / editor
+.vscode/
+
+# mihomo / clash configs (do not commit real configs)
+runtime.yaml
+config.yaml
+mixin.yaml
+**/*.mmdb
+**/data/
+**/cache.db
+
+# backup files
+*.bak
+*.backup
+*~
