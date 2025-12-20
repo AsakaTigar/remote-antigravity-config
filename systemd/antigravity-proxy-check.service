@@ -1,0 +1,12 @@
+[Unit]
+Description=Antigravity Proxy Login Check
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/mnt/t2-6tb/Linpeikai/linux/github_antigravity/scripts/92_login_check.sh
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

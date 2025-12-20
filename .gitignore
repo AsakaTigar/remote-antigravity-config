@@ -17,12 +17,13 @@ __pycache__/
 .vscode/
 
 # mihomo / clash configs (do not commit real configs)
+# 排除运行时配置
 runtime.yaml
 config.yaml
-mixin.yaml
 **/*.mmdb
 **/data/
 **/cache.db
+# 注意: mihomo/mixin.yaml 是模板文件，可以提交（不含敏感信息）
 
 # backup files
 *.bak

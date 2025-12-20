@@ -1,0 +1,71 @@
+# Mihomo Mixin 配置
+# 此文件用于覆盖订阅配置中的部分设置
+# 位置: /opt/clash/mixin.yaml
+
+_custom:
+  system-proxy:
+    enable: true
+
+# 基础设置
+mixed-port: 7890
+external-controller: "0.0.0.0:9090"
+external-ui: public
+secret: "your-secret-here"  # 建议修改为随机密钥
+allow-lan: false  # 若开启务必设置用户验证以防暴露公网后被滥用
+
+authentication:
+  # - "username:password"  # 用户验证
+
+# TUN 配置 - 关键配置！
+tun:
+  enable: true
+  stack: system
+  auto-route: true
+  auto-redir: true      # clash 兼容
+  auto-redirect: true   # mihomo 专用
+  auto-detect-interface: true
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  strict-route: true
+  # exclude-interface:
+  #   - docker0
+  #   - podman0
+
+# DNS 配置 - 关键配置！
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - 'localhost.ptlogin2.qq.com'
+  nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 1.1.1.1
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+
+# 规则前缀插入
+rules:
+  prefix:
+    - DOMAIN,api64.ipify.org,DIRECT  # 用于获取真实公网 IP
+    # - DOMAIN-KEYWORD,github,proxy  # 用于升级内核
+  suffix:
+
+proxies:
+  prefix:
+  suffix:
+  override:
+
+proxy-groups:
+  prefix:
+  suffix:
+  override:

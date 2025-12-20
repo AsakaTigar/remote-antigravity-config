@@ -79,6 +79,10 @@ bash scripts/60_restart_vscode_remote.sh
 | `40_cleanup_1080_shell_exports.sh` | 清理 `.bashrc` 和 `.profile` 中的 1080 代理配置 |
 | `50_cleanup_vscode_proxy_settings.py` | 清理 VS Code Remote `settings.json` 中的代理配置 |
 | `60_restart_vscode_remote.sh` | 重启 VS Code Remote 相关进程 |
+| `90_diagnose_proxy.sh` | **诊断脚本**: 一键检查代理、TUN、DNS 状态 |
+| `91_auto_fix.sh` | **一键修复**: 自动修复常见代理问题 |
+| `92_login_check.sh` | **登录检查**: 开机/登录时自动检查并修复 |
+| `93_install_login_check.sh` | 安装登录自动检查的 systemd user service |
 
 ---
 
