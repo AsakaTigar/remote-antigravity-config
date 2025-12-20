@@ -12,7 +12,7 @@
 用户无法通过 VS Code Remote 正常访问外网，需要依赖本地 Windows 机器的反向 SSH 隧道：
 
 ```powershell
-ssh -N -R 1080:127.0.0.1:63930 -p 60002 zhangfanlong@10.23.23.93
+ssh -N -R 1080:127.0.0.1:<LOCAL_PORT> -p <SSH_PORT> <USER>@<SERVER_IP>
 ```
 
 一旦反向隧道断开，远程服务器上的代理就会失效。

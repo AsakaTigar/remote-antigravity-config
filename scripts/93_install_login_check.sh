@@ -14,14 +14,18 @@ echo " 安装登录自动检查服务"
 echo "========================================="
 echo ""
 
-# 创建用户 systemd 目录
+# 创建用户目录
 mkdir -p ~/.config/systemd/user/
+mkdir -p ~/.local/bin/
 
-# 复制服务文件
+# 复制脚本到用户目录
+cp "$SCRIPT_DIR/92_login_check.sh" ~/.local/bin/antigravity-login-check.sh
+chmod +x ~/.local/bin/antigravity-login-check.sh
+
+# 复制并配置服务文件
 cp "$REPO_DIR/systemd/antigravity-proxy-check.service" ~/.config/systemd/user/
 
 # 确保脚本可执行
-chmod +x "$SCRIPT_DIR/92_login_check.sh"
 chmod +x "$SCRIPT_DIR/90_diagnose_proxy.sh"
 chmod +x "$SCRIPT_DIR/91_auto_fix.sh"
 

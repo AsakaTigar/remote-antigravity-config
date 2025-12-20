@@ -4,7 +4,10 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/mnt/t2-6tb/Linpeikai/linux/github_antigravity/scripts/92_login_check.sh
+# 注意：安装时会自动替换 %SCRIPT_PATH% 为实际路径
+# 或者手动修改为你的仓库路径，如：
+# ExecStart=/path/to/your/repo/scripts/92_login_check.sh
+ExecStart=%h/.local/bin/antigravity-login-check.sh
 StandardOutput=journal
 StandardError=journal
 
